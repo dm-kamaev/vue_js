@@ -1,0 +1,22 @@
+{
+  "name": "myapp",
+  "version": "0.0.1",
+  "description": "My app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dm-kamaev",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^0.28.10",
+    "vue": "^2.5.13",
+    "vue-loader": "^14.1.1",
+    "vue-template-compiler": "^2.5.13",
+    "vue-template-loader": "^0.4.0",
+    "webpack": "^3.11.0"
+  }
+}
