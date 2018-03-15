@@ -3,15 +3,16 @@
 const util = require('util');
 const express = require('express');
 const app = express();
+const path = require('path');
 require('express-async-await')(app);
 
 const fs = require('fs');
 fs.promise_read_file = util.promisify(fs.readFile);
 
-app.use(express.static('/Start/vue_js/'));
+app.use(express.static('../'));
 
 app.get('/', async function (req, res) {
-  var body = await fs.promise_read_file('/Start/vue_js/index.html', 'utf-8');
+  var body = await fs.promise_read_file('../index.html', 'utf-8');
   res
     .status(200)
     .send(body);

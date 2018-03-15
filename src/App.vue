@@ -34,20 +34,18 @@
       </div>
     </div>
 
-    <HelloWorld/>
+    <Debug :listBook='listBook'/>
 
   </div>
 </template>
 <script>
 
-const Vue = require('vue');
+import Vue from 'vue';
+import Debug from './Debug.vue'
 
-
-module.exports = {
+export default {
   name: 'app',
-  components: {
-    HelloWorld: require('./HelloWorld.vue').default
-  },
+  components: { 'Debug': Debug, },
   data: function () {
     return {
       author: '',
