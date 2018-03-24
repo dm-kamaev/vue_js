@@ -4,7 +4,7 @@
   "description": "My app",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "./node_modules/.bin/webpack --mode development --config ./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dm-kamaev",
@@ -22,5 +22,8 @@
     "vuex": "^3.0.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12"
+  },
+  "devDependencies": {
+    "friendly-errors-webpack-plugin": "^1.6.1"
   }
 }

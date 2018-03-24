@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const config  = module.exports = {
   // This is the "main" file which should include all other modules
@@ -42,12 +43,16 @@ const config  = module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"dev"'
+      }
+    }),
+    new FriendlyErrorsWebpackPlugin()
+  ]
 };
 
-config.plugins = config.plugins || [];
+// config.plugins = config.plugins || [];
 
-config.plugins.push(new webpack.DefinePlugin({
-  'process.env': {
-    'NODE_ENV': '"dev"'
-  }
-}));
+// config.plugins.push();
