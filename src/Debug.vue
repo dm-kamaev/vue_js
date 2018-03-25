@@ -4,13 +4,13 @@
 
 <script>
 export default {
-  name: 'Debug',
-  props: ['listBook'],
-  methods: {
-    debug() {
-      return JSON.stringify(this.listBook, null, 2);
+    name: 'Debug',
+    props: ['listBook'],
+    methods: {
+        debug() {
+            return JSON.stringify(this.listBook, null, 2);
+        }
     }
-  }
 };
 </script>
 

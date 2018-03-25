@@ -74,7 +74,7 @@ export default {
   },
   computed: {
     get_list_books() {
-      return this.$store.getters.books;
+      return this.$store.getters.books;,
     }
   },
   methods: {

@@ -6,13 +6,13 @@ import store_books from './books/store_books.js';
 Vue.use(Vuex);
 
 const store = {
-  modules: {
-    books: store_books,
-  }
+    modules: {
+        books: store_books,
+    }
 };
 
 new Vue({
-  el: 'app',
-  components:{ App },
-  store: new Vuex.Store(store),
+    el: 'app',
+    components:{ App },
+    store: new Vuex.Store(store),
 });
