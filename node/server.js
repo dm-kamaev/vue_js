@@ -9,9 +9,9 @@ require('express-async-await')(app);
 const fs = require('fs');
 fs.promise_read_file = util.promisify(fs.readFile);
 
-app.use(express.static('../'));
+app.use('/dist', express.static('../dist/'));
 
-app.get('/', async function (req, res) {
+app.all('*', async function (req, res) {
   var body = await fs.promise_read_file('../index.html', 'utf-8');
   res
     .status(200)
