@@ -43,7 +43,7 @@ export default {
       return (index) => {
         return state.listBooks[index];
       };
-    }
+    },
   },
   modules: {}
 };

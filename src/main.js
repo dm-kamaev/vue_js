@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Vue_Cookie from 'vue-cookie';
 import VueRouter from 'vue-router';
 
 import App from './App.vue';
@@ -13,6 +14,7 @@ import store_books from './books/store_books.js';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
+Vue.use(Vue_Cookie);
 
 const routes = [
   { path: '*', component: Not_found },

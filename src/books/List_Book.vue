@@ -16,22 +16,25 @@
 <script>
 
 import Vue from 'vue';
+import service_books from '../services/service_books.js';
 import action_types from './action_types.js';
 import books_bus from './books_bus.js';
 
 export default {
   name: 'ListBook',
   data: function () {
-    return {};
+    return {
+      u_id: null,
+    };
   },
-  beforeCreate() {
-    // TODO: ajax request to server
-    this.$store.dispatch(action_types.ADD_BOOK, {
-      id: 0,
-      author: 'Пушкин',
-      name: 'евгений онегин',
-      year: 1792
+  async beforeCreate() {
+    const books = await service_books.get_all(this.$cookie.get('u_id'));
+    books.forEach(book => {
+      this.$store.dispatch(action_types.ADD_BOOK, book);
     });
+  },
+  created: function () {
+    this.u_id = this.$cookie.get('u_id');
   },
   computed: {
     get_list_books() {
@@ -61,8 +64,9 @@ export default {
         index: book_index,
       });
     },
-    _remove_book: function (bookIndex, e) {
-      this.$store.dispatch(action_types.REMOVE_BOOK, bookIndex);
+    _remove_book: function (book_index, e) {
+      this.$store.dispatch(action_types.REMOVE_BOOK, book_index);
+      service_books.update(this.u_id, this.$store.getters.books);
     },
   }
 };

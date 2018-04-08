@@ -53,6 +53,3 @@ const config  = module.exports = {
     ]
 };
 
-// config.plugins = config.plugins || [];
-
-// config.plugins.push();
