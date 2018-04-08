@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = module.exports = {
   // This is the "main" file which should include all other modules
@@ -13,11 +13,11 @@ const config = module.exports = {
   },
   resolve: {
     alias: { // include template compiler
-      vue: 'vue/dist/vue.js' // for production use 'vue/dist/vue.min'
+      vue: 'vue/dist/vue.min'
     }
   },
-  watch: true,
-  devtool: 'source-map',
+  // watch: true,
+  // devtool: 'source-map',
   module: {
     rules: [{
       test: /\.js$/,
@@ -45,9 +45,9 @@ const config = module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': '"dev"'
+        'NODE_ENV': '"production"'
       }
     }),
-    new FriendlyErrorsWebpackPlugin()
+    new UglifyJsPlugin()
   ]
 };
