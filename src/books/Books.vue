@@ -6,7 +6,7 @@
     <div style='display:inline-block;width:70%;vertical-align:top'>
       <List-Book/>
     </div>
-    <Debug :listBook='get_list_books'/>
+    <!-- <Debug :listBook='get_list_books'/> -->
   </div>
 </template>
 <script>
