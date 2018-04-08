@@ -24,7 +24,7 @@ import action_types from './action_types.js';
 import books_bus from './books_bus.js';
 
 export default {
-  name: 'BookForm',
+  name: 'Book_Form',
   data: function () {
     return {
       author: '',

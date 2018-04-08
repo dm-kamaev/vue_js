@@ -6,10 +6,14 @@ const app = express();
 const path = require('path');
 require('express-async-await')(app);
 
+const router_reviews_books = require('./reviews_books/router_reviews_books.js');
+
 const fs = require('fs');
 fs.promise_read_file = util.promisify(fs.readFile);
 
 app.use('/dist', express.static('../dist/'));
+
+app.use(router_reviews_books);
 
 app.all('*', async function (req, res) {
   var body = await fs.promise_read_file('../index.html', 'utf-8');
@@ -19,12 +23,11 @@ app.all('*', async function (req, res) {
 });
 
 
+// ===============================================
 app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.status(500).send('Internal error');
 });
-
-
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

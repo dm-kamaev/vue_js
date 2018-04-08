@@ -13,16 +13,16 @@
 
 import Vue from 'vue';
 import Debug from '../Debug.vue';
-import BookForm from './BookForm.vue';
-import ListBook from './ListBook.vue';
+import Book_Form from './Book_Form.vue';
+import List_Book from './List_Book.vue';
 import action_types from './action_types.js';
 
 export default {
   name: 'Books',
   components: {
     'Debug': Debug,
-    'Book-Form': BookForm,
-    'List-Book': ListBook
+    'Book-Form': Book_Form,
+    'List-Book': List_Book
   },
   data: function () {
     return {};
